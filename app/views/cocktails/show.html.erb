@@ -6,6 +6,7 @@
   <div class="">
   <h1 class="text-center"><%= @cocktail.name %></h1>
   <% @cocktail.doses.each do |dose| %>
+
   <p><%= dose.description %> <%= dose.ingredient.name %> </p>
   <%= link_to "Delete a dose", cocktail_dose_path(dose, cocktail_id: params[:id]),
       method: :delete,
