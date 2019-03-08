@@ -1,9 +1,10 @@
 <div class="navbar-wagon">
   <p>Welcome</p>
 </div>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2771&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1494962227006-107baac595eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80);">
   <div class="container">
-    <h1>My <strong>favorite</strong> drinks <strong>around</strong>!</h1>
+    <h1>Add your <strong>favorite</strong> <strong>drinks</strong></h1>
+    <p></p>
 
     <%= link_to "Add new", new_cocktail_path, class: "btn btn-gradient my-btn" %>
   </div>
@@ -13,7 +14,7 @@
 <% @cocktails.each do |cocktail|  %>
   <div class="card-category " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://via.placeholder.com/300); display: flex;">
     <h2 class="text-center"> <%= cocktail.name  %></h2>
-
+    <!-- <i class="fas fa-trash-alt"> -->
   </div>
 <% end %>
 </div>
