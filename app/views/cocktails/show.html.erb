@@ -2,21 +2,26 @@
   <div class="navbar-wagon-link navbar-wagon-link:hover">
   </div>
 </div>
-<div class="container  card-category">
-  <div class="">
-  <h1 class="text-center"><%= @cocktail.name %></h1>
-  <% @cocktail.doses.each do |dose| %>
+<div class="container card">
+  <div class="container card-product  ">
+    <h1 class="text-center">
+      <%= @cocktail.name %>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+    </h1>
+    <% @cocktail.doses.each do |dose| %>
 
-  <p><%= dose.description %> <%= dose.ingredient.name %> </p>
-  <%= link_to "Delete a dose", cocktail_dose_path(dose, cocktail_id: params[:id]),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+    <p><%= dose.description %> </p>
+    <br>
+    <p><%= dose.ingredient.name %></p>
+    <br>
+    <%= link_to "Delete  dose", cocktail_dose_path(dose, cocktail_id: params[:id]),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
 
-  <%= link_to "Create a dose", new_cocktail_dose_path(@cocktail)%>
-  <% end %>
+    <% end %>
+
+    <p> <%= link_to "Create a dose", new_cocktail_dose_path(@cocktail)%></p>
+    <p> <%= link_to "Home", cocktails_path%> </p>
   </div>
-
-<p> <%= link_to "Home", cocktails_path%> </p>
-
-  </div>
+</div>
 </div>
